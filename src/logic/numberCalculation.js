@@ -24,11 +24,9 @@ export class NumberCalculation {
         //Formula is prime while n > 1 && n % n-i !== 0
         const n = this.number;
         let isPrime = n > 1;
-        if(n > 1) {
-            for (let i = 2; i < n; i++) {
-                if(n % i === 0){
-                    isPrime = false
-                }
+        for (let i = 2; i < n; i++) {
+            if(n % i === 0){
+                isPrime = false
             }
         }
         return isPrime ? (3 * n) : 0
@@ -43,8 +41,8 @@ export class NumberCalculation {
     calcFibonacci () {
         // formula F(n) = F(n-2)+F(n-1) 
         const n = this.number + 2;
-        let prevValue = 0, actualValue = 1, result = n;
-        for (let i = 2; i < n; i++) {
+        let prevValue = 0, actualValue = 1, result;
+        for (let i = 2; i <= n; i++) {
             result = prevValue + actualValue;
             prevValue = actualValue;
             actualValue = result;
